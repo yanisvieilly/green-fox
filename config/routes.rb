@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   get '/auth/:provider/callback', to: 'sessions#create'
+  get '/login', to: 'sessions#new'
 
   resources :friendships
 
