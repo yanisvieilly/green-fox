@@ -1,5 +1,5 @@
 class FriendshipsController < ApplicationController
-  before_action :signed_in?
+  before_action :require_login
 
   def index
   end
