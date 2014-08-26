@@ -8,9 +8,11 @@ class SessionsController < ApplicationController
       user.name = auth.info.name
     end
     session[:user_id] = @user.id
-    redirect_to root_url
+    redirect_to root_url, notice: "Welcome back, #{@user.name}!"
   end
 
   def destroy
+    session[:user_id] = nil
+    redirect_to root_url, notice: "Successfully logged out."
   end
 end
