@@ -10,9 +10,10 @@ html
       .container
         .navbar-header
           = link_to 'GreenFox', friendships_path, class: 'navbar-brand'
-        ul.nav.navbar-nav.navbar-right
-          li = link_to 'Edit profile', '#'
-          li = link_to 'Logout', logout_url
+        - if current_user
+          ul.nav.navbar-nav.navbar-right
+            li = link_to 'Edit profile', '#'
+            li = link_to 'Logout', logout_url
     .container
       .row
         .col-md-12
