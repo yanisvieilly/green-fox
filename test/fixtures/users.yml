@@ -1,11 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  provider: MyString
-  uid: MyString
-
-two:
-  name: MyString
-  provider: MyString
-  uid: MyString
+valid_user:
+  nickname: johndoe42
+  name: John Doe
+  provider: twitter
+  uid: 123456
