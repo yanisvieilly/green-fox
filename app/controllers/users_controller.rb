@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i(edit update)
+  before_action :prevent_user_edition, unless: :authorized_user?, only: %i(edit update)
 
   def edit
 
@@ -16,6 +17,14 @@ class UsersController < ApplicationController
   private
     def set_user
       @user = User.find(params[:id])
+    end
+
+    def prevent_user_edition
+      redirect_to root_url, alert: 'You are not allowed to edit this profile.'
+    end
+
+    def authorized_user?
+      current_user.id == @user.id
     end
 
     def user_params
