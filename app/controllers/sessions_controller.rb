@@ -10,6 +10,10 @@ class SessionsController < ApplicationController
     redirect_to root_url, notice: "Welcome back, #{@user.name}!"
   end
 
+  def failure
+    redirect_to login_url, alert: "Login error: #{params[:message]}"
+  end
+
   def destroy
     session[:user_id] = nil
     redirect_to login_url, notice: 'Successfully logged out.'
