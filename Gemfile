@@ -31,6 +31,7 @@ gem 'spring',        group: :development
 
 gem 'dotenv-rails', '~> 0.11.1', groups: %i(development test)
 
+gem 'hashie', '~> 3.3.1'
 gem 'omniauth-twitter', '~> 1.0.1'
 
 # Use ActiveModel has_secure_password
