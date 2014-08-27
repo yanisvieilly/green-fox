@@ -34,6 +34,10 @@ group :development do
   gem 'quiet_assets', '~> 1.0.3'
 end
 
+group :test do
+  gem 'minitest-rg', '~> 5.1.0'
+end
+
 gem 'dotenv-rails', '~> 0.11.1', groups: %i(development test)
 
 gem 'hashie', '~> 3.3.1'
