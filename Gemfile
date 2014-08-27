@@ -19,6 +19,8 @@ gem 'slim', '~> 2.0.3'
 gem 'bootstrap-sass', '~> 3.2.0.1'
 gem 'bootswatch-rails', '~> 3.2.0'
 
+gem 'simple_form', '~> 3.0.2'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
