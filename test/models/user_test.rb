@@ -7,7 +7,7 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "should save user with valid attributes" do
-    user = users(:valid_user)
+    user = users(:john_doe)
     assert user.save
   end
 end

@@ -1,7 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-valid_user:
+john_doe:
   nickname: johndoe42
   name: John Doe
   provider: twitter
   uid: 123456
+
+mal_icious:
+  nickname: totallylegit123
+  name: Mal Icious
+  provider: twitter
+  uid: 999999
