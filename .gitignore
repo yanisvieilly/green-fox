@@ -7,8 +7,8 @@
 # Ignore bundler config.
 /.bundle
 
-# Ignore secrets file.
-/config/secrets.yml
+# Ignore dotenv file.
+/.env
 
 # Ignore the default SQLite database.
 /db/*.sqlite3
