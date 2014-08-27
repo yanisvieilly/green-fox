@@ -10,7 +10,8 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to({ action: :edit }, notice: 'Profile successfully updated!')
     else
-      render :edit, alert: 'Profile could not be updated.'
+      flash.now.alert = 'Profile could not be updated.'
+      render :edit
     end
   end
 
