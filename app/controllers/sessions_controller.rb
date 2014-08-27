@@ -5,6 +5,9 @@ class SessionsController < ApplicationController
     auth = request.env['omniauth.auth']
     @user = User.find_or_create_by(provider: auth.provider, uid: auth.uid) do |user|
       user.name = auth.info.name
+      user.nickname = auth.info.nickname
+      user.description = auth.info.description
+      user.location = auth.info.location
     end
     session[:user_id] = @user.id
     redirect_to root_url, notice: "Welcome back, #{@user.name}!"
