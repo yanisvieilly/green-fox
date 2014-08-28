@@ -10,4 +10,9 @@ class UserTest < ActiveSupport::TestCase
     user = users(:john_doe)
     assert user.save
   end
+
+  test "should not save user with an existing nickname" do
+    invalid_user = User.new(nickname: users(:john_doe).nickname, provider: 'twitter', uid: 777777)
+    assert_not invalid_user.save
+  end
 end
