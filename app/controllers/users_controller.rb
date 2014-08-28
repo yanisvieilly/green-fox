@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     end
 
     def authorized_user?
-      current_user.id == @user.id
+      current_user == @user
     end
 
     def user_params
