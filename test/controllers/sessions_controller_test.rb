@@ -9,7 +9,7 @@ class SessionsControllerTest < ActionController::TestCase
   test "should create unknown user" do
     new_user = {
       provider: 'twitter',
-      uid: 444444,
+      uid: '444444',
       info: {
         name: 'Jane Doe',
         nickname: 'bluetiger',
