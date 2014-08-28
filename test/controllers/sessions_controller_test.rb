@@ -40,6 +40,13 @@ class SessionsControllerTest < ActionController::TestCase
     assert_equal "Welcome back, #{users(:john_doe).name}!", flash[:notice]
   end
 
+  test "should get authentication failure" do
+    error_message = 'invalid_credentials'
+    get :failure, message: error_message
+    assert_redirected_to login_url
+    assert_equal "Login error: #{error_message}", flash[:alert]
+  end
+
   test "should get logout" do
     get :destroy
     assert_redirected_to login_url
