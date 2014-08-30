@@ -7,4 +7,4 @@ $ ->
 
   $('.decline-request').on 'ajax:success', removeListItem
 
-  $('.delete-friendship').on 'ajax:success', removeListItem
+  $('ul#friends').on 'ajax:success', '.delete-friendship', removeListItem
