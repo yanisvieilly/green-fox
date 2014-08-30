@@ -1,0 +1,8 @@
+li.list-group-item
+  h4.list-group-heading
+    strong => @user.nickname
+    small = @user.name
+  p.list-group-item-text
+    = @user.description
+    br
+    em = @user.location

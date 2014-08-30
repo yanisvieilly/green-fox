@@ -1,8 +1,12 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i(edit update)
+  before_action :set_user, only: %i(edit update show)
   before_action :prevent_user_edition, unless: :authorized_user?, only: %i(edit update)
 
   def edit
+
+  end
+
+  def show
 
   end
 
