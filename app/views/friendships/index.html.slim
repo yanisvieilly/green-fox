@@ -1,12 +1,26 @@
-h1 Friends
+.row
 
-ul.list-group
-  - @friends.each do |friend|
-    li.list-group-item
-      h4.list-group-heading
-        strong => friend.nickname
-        small = friend.name
-      p.list-group-item-text
-        = friend.description
-        br
-        em = friend.location
+  .col-md-8
+    h1 Friends
+
+    ul.list-group
+      - @friends.each do |friend|
+        li.list-group-item
+          h4.list-group-heading
+            strong => friend.nickname
+            small = friend.name
+          p.list-group-item-text
+            = friend.description
+            br
+            em = friend.location
+
+  .col-md-4
+    h1 Friend requests
+
+    ul.list-group
+      - @requests.each do |request|
+        li.list-group-item
+          strong => request.requester.nickname
+          small => request.requester.name
+          button.btn.btn-xs.btn-danger.pull-right Decline
+          button.btn.btn-xs.btn-success.pull-right Accept
