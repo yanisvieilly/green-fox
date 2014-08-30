@@ -4,5 +4,10 @@ class Request < ActiveRecord::Base
 
   def accept
     requester.friends << requested
+    self.destroy
+  end
+
+  def decline
+    self.destroy
   end
 end
