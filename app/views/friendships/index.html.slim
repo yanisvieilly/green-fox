@@ -5,19 +5,7 @@
 
     ul.list-group#friends
       - @friends.each do |friend|
-        li.list-group-item
-          .row
-            .col-md-10
-              h4.list-group-heading
-                strong => friend.nickname
-                small = friend.name
-              p.list-group-item-text
-                = friend.description
-                br
-                em = friend.location
-            .col-md-2
-              = link_to 'Remove', friendship_path(friend),
-                method: :delete, remote: true, class: 'btn btn-danger delete-friendship'
+        = friends_list_item(friend)
 
   .col-md-4
     h1 Friend requests
