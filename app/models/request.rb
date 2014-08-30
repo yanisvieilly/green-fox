@@ -6,8 +6,4 @@ class Request < ActiveRecord::Base
     requester.friends << requested
     self.destroy
   end
-
-  def decline
-    self.destroy
-  end
 end
