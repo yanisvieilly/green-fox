@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
 
   resources :friendships
+  resources :requests
   resources :users, only: %i(edit update show)
 
   root 'friendships#index'

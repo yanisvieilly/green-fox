@@ -22,5 +22,5 @@
         li.list-group-item
           strong => request.requester.nickname
           small => request.requester.name
-          button.btn.btn-xs.btn-danger.pull-right Decline
-          button.btn.btn-xs.btn-success.pull-right Accept
+          = link_to 'Decline', request_path(request), method: :delete, remote: :true, class: 'btn btn-xs btn-danger pull-right'
+          = link_to 'Accept', request_path(request), method: :patch, remote: :true, class: 'btn btn-xs btn-success pull-right'
