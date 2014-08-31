@@ -19,3 +19,9 @@
             class: 'btn btn-xs btn-danger pull-right decline-request'
           = link_to 'Accept', request_path(request), method: :patch, remote: true,
             class: 'btn btn-xs btn-success pull-right accept-request'
+
+.row
+
+  .col-md-8
+    h1 Search for friends
+    input#friend-search.form-control placeholder='Search...'
