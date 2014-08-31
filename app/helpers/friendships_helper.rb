@@ -16,7 +16,7 @@ module FriendshipsHelper
         end +
         content_tag(:div, class: 'col-md-2') do
           if search
-            link_to 'Add', requests_path(requester_id: current_user.id, requested_id: friend.id),
+            link_to 'Add', requests_path(requested_id: friend.id),
               method: :post, remote: true, class: 'btn btn-success add-friendship'
           else
             friendship = current_user.friendships.find_by(friend_id: friend.id)
