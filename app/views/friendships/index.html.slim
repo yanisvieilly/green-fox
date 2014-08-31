@@ -4,8 +4,8 @@
     h1 Friends
 
     ul.list-group#friends
-      - @friends.each do |friend|
-        = friends_list_item(friend)
+      - @friendships.each do |friendship|
+        = friends_list_item(friendship.friend)
 
   .col-md-4
     h1 Friend requests

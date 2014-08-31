@@ -2,13 +2,13 @@ class FriendshipsController < ApplicationController
   before_action :require_login
 
   def index
-    @friends = current_user.friends
+    @friendships = current_user.friendships.includes(:friend)
     @requests = current_user.inverse_requests
   end
 
   def destroy
-    @friend = User.find(params[:id])
-    current_user.friends.delete(@friend)
+    @friendship = current_user.friendships.find(params[:id])
+    @friendship.destroy
     render nothing: true
   end
 end

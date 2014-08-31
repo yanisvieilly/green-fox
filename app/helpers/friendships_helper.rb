@@ -19,7 +19,8 @@ module FriendshipsHelper
             link_to 'Add', requests_path(requester_id: current_user.id, requested_id: friend.id),
               method: :post, remote: true, class: 'btn btn-success add-friendship'
           else
-            link_to 'Remove', friendship_path(friend), method: :delete, remote: true, class: 'btn btn-danger delete-friendship'
+            friendship = current_user.friendships.find_by(friend_id: friend.id)
+            link_to 'Remove', friendship_path(friendship), method: :delete, remote: true, class: 'btn btn-danger delete-friendship'
           end
         end
       end
