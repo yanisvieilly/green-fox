@@ -21,7 +21,7 @@ class RequestsController < ApplicationController
 
   def destroy
     @request.destroy
-    head :no_content
+    render json: @request
   end
 
   private
