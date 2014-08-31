@@ -23,7 +23,7 @@ $ ->
 
   refreshRequests = ->
     $.get('/requests')
-    setTimeout refreshRequests, 1000
+    setTimeout refreshRequests, 2000
   refreshRequests()
 
   # Timeout to prevent a request on each keystroke
