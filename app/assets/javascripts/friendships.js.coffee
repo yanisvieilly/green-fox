@@ -28,7 +28,9 @@ $ ->
   $('#friend-search').on 'keyup', ->
     clearTimeout timeout
     timeout = setTimeout(
-      => $.get "/users/search?q=#{$(@).val()}"
+      =>
+        $.get("/users/search", q: $(@).val())
+          .fail (xhr, status, error) -> window.createFlash error, 'danger'
       300
     )
 
