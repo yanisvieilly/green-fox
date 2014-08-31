@@ -35,4 +35,14 @@ class UserLoginTest < ActionDispatch::IntegrationTest
       assert_not users(:john_doe).friends.include? users(:jack_three)
     end
   end
+
+  test "should be able to remove a friend" do
+    within('ul#friends') do
+      assert users(:john_doe).friends.include? users(:mal_icious)
+      assert_difference('Friendship.count', -2) do
+        click_link 'Remove'
+      end
+      assert_not users(:john_doe).friends.include? users(:mal_icious)
+    end
+  end
 end
