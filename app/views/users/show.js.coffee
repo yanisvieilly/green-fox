@@ -1,1 +1,1 @@
-$('ul#friends').prepend "<%=j render 'show' %>"
+$('ul#friends').prepend "<%=j render partial: 'show', locals: { user: @user } %>"

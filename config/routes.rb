@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
   resources :friendships
   resources :requests
-  resources :users, only: %i(edit update show)
+  resources :users, only: %i(edit update show) do
+    get :search, on: :collection
+  end
 
   root 'friendships#index'
 

@@ -19,6 +19,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def search
+    @users = User.where('LOWER(name) LIKE ? OR LOWER(nickname) LIKE ?', "%#{params[:q]}%", "%#{params[:q]}%")
+  end
+
   private
     def set_user
       @user = User.find(params[:id])
