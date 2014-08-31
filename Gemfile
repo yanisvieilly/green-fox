@@ -38,6 +38,7 @@ end
 
 group :test do
   gem 'minitest-rg', '~> 5.1.0'
+  gem 'capybara', '~> 2.4.1'
 end
 
 gem 'dotenv-rails', '~> 0.11.1', groups: %i(development test)
