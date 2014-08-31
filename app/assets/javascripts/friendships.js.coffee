@@ -5,23 +5,26 @@ $ ->
     $(e.target).closest('li').remove()
     window.createFlash message
 
-  # When the friend request is accepted, add the new friend to the user friends list
-  $('.accept-request')
-    .on 'ajax:success', (e, data) ->
+  $('ul#requests')
+    # When the friend request is accepted, add the new friend to the user friends list
+    .on 'ajax:success', '.accept-request', (e, data) ->
       $.get "/users/#{data.requester_id}"
       displaySuccess e, 'Friend request was successfully accepted'
-    .on 'ajax:error', displayError
+    .on 'ajax:error', '.accept-request', displayError
 
-  # When the friend request is declined, remove it
-  $('.decline-request')
-    .on 'ajax:success', (e) -> displaySuccess e, 'Friend request was successfully declined'
-    .on 'ajax:error', displayError
+    # When the friend request is declined, remove it
+    .on 'ajax:success', '.decline-request', (e) -> displaySuccess e, 'Friend request was successfully declined'
+    .on 'ajax:error', '.decline-request', displayError
 
   # When a friendship is removed, remove the friend from the list
   $('ul#friends')
     .on 'ajax:success', '.delete-friendship', (e) -> displaySuccess e, 'Friend was successfully removed'
     .on 'ajax:error', '.delete-friendship', displayError
 
+  refreshRequests = ->
+    $.get('/requests')
+    setTimeout refreshRequests, 1000
+  refreshRequests()
 
   # Timeout to prevent a request on each keystroke
   timeout = null
@@ -29,7 +32,7 @@ $ ->
     clearTimeout timeout
     timeout = setTimeout(
       =>
-        $.get("/users/search", q: $(@).val())
+        $.get('/users/search', q: $(@).val())
           .fail (xhr, status, error) -> window.createFlash error, 'danger'
       300
     )

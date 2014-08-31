@@ -10,7 +10,7 @@
   .col-md-4
     h1 Friend requests
 
-    ul.list-group
+    ul.list-group#requests
       - @requests.each do |request|
         li.list-group-item
           strong => request.requester.nickname

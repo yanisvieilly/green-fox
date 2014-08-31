@@ -1,6 +1,10 @@
 class RequestsController < ApplicationController
   before_action :set_request, only: %i(update destroy)
 
+  def index
+    @requests = current_user.inverse_requests
+  end
+
   def create
     @request = current_user.requests.new(requested_id: params[:requested_id])
     if @request.save
@@ -12,7 +16,7 @@ class RequestsController < ApplicationController
 
   def update
     @request.accept
-    head :no_content
+    render json: @request
   end
 
   def destroy
