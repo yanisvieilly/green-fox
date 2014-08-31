@@ -30,4 +30,16 @@ class UsersControllerTest < ActionController::TestCase
     assert_equal 'You are not allowed to edit this profile.', flash[:alert]
   end
 
+  test "should return results when searching" do
+    xhr :get, :search, { q: 'emma' }
+    assert_response :success
+    assert_equal 1, assigns(:users).count
+    assert assigns(:users).include? users(:emma_smith)
+  end
+
+  test "should not return users who are already friends with the user" do
+    xhr :get, :search, { q: 'mal' }
+    assert_response :success
+    assert_equal 0, assigns(:users).count
+  end
 end

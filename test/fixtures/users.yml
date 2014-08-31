@@ -17,3 +17,9 @@ jack_three:
   name: Jack Three
   provider: twitter
   uid: 333333
+
+emma_smith:
+  nickname: emma1
+  name: Emma Smith
+  provider: twitter
+  uid: 453213
