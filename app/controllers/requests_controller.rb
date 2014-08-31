@@ -12,12 +12,12 @@ class RequestsController < ApplicationController
 
   def update
     @request.accept
-    render json: @request
+    head :no_content
   end
 
   def destroy
     @request.destroy
-    render json: @request
+    head :no_content
   end
 
   private
