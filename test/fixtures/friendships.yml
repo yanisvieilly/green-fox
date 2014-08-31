@@ -7,3 +7,11 @@ one:
 two:
   user: jack_three
   friend: mal_icious
+
+three:
+  user: john_doe
+  friend: mal_icious
+
+four:
+  user: mal_icious
+  friend: john_doe
