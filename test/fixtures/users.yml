@@ -11,3 +11,9 @@ mal_icious:
   name: Mal Icious
   provider: twitter
   uid: 999999
+
+jack_three:
+  nickname: three33
+  name: Jack Three
+  provider: twitter
+  uid: 333333

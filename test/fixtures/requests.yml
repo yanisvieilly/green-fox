@@ -1,9 +1,5 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  requester_id: 
-  requested_id: 
-
-two:
-  requester_id: 
-  requested_id: 
+first_request:
+  requester: jack_three
+  requested: john_doe

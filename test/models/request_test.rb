@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class RequestTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "should create a friendship when accepted" do
+    requests(:first_request).accept
+    assert users(:john_doe).friends.include? users(:jack_three)
+  end
 end
