@@ -20,7 +20,10 @@ class UsersController < ApplicationController
   end
 
   def search
+    friend_ids = current_user.friends.pluck(:id)
+    requested_friend_ids = current_user.requests.pluck(:requested_id)
     @users = User.where('LOWER(name) LIKE ? OR LOWER(nickname) LIKE ?', "%#{params[:q]}%", "%#{params[:q]}%")
+      .where.not(id: friend_ids | requested_friend_ids | [current_user.id])
   end
 
   private

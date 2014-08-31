@@ -21,3 +21,6 @@ $ ->
       => $.get "/users/search?q=#{$(@).val()}"
       300
     )
+
+  # When a friend request is sent, remove the friend from the search results
+  $('#friend-search-result').on 'ajax:success', '.add-friendship', removeListItem
